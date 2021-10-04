@@ -473,11 +473,13 @@ svg {
   text-align: right;
   font-weight: normal;
   letter-spacing: 2px;
-  font-size: 0.7em;
+  font-size: 0.85rem;
+  color: #eee;
 }
 
 .stats td:last-child {
   text-align: left;
+  color: #eee;
 }
 
 .stopwatch {

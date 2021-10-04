@@ -7,22 +7,22 @@ class App extends Component {
   state = {
     players: [
       {
-        name: "Guil",
+        name: "Fred",
         score: 0,
         id: 1
       },
       {
-        name: "Treasure",
+        name: "Tracey",
         score: 0,
         id: 2
       },
       {
-        name: "Ashley",
+        name: "April",
         score: 0,
         id: 3
       },
       {
-        name: "James",
+        name: "Randy",
         score: 0,
         id: 4
       }
@@ -32,15 +32,31 @@ class App extends Component {
   //Plaer ID counter
   prevPlayerId = 4;
 
-  handleScoreChange = (index, delta) => {
+  handleScoreIncrement = (index, delta) => {
     this.setState( prev => {
-      const updatedPlayers = [...prev.players];
-      const updatedPlayer = {...updatedPlayers[index]};
-      updatedPlayer.score += delta;
-      updatedPlayers[index] = updatedPlayer;
-      return {
-        players: updatedPlayers
-      };
+      if (prev.players[index].score >= 0) {
+        const updatedPlayers = [...prev.players];
+        const targetPlayer = {...updatedPlayers[index]};
+        targetPlayer.score += delta;
+        updatedPlayers[index] = targetPlayer;
+        return {
+          players: updatedPlayers
+        };
+      }
+    })
+  }
+
+  handleScoreDecrement = (index, delta) => {
+    this.setState( prev => {
+      if (prev.players[index].score > 0) {
+        const updatedPlayers = [...prev.players];
+        const targetPlayer = {...updatedPlayers[index]};
+        targetPlayer.score += delta;
+        updatedPlayers[index] = targetPlayer;
+        return {
+          players: updatedPlayers
+        };
+      }
     })
   }
 
@@ -83,7 +99,9 @@ class App extends Component {
             id={player.id}
             key={player.id.toString()} 
             index={index}
-            changeScore={this.handleScoreChange}
+            // changeScore={this.handleScoreChange}
+            scoreIncrement={this.handleScoreIncrement}
+            scoreDecrement={this.handleScoreDecrement}
             removePlayer={this.handleRemovePlayer}           
           />
         )}

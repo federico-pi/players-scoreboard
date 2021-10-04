@@ -155,11 +155,13 @@ body {
     text-align: right;
     font-weight: normal;
     letter-spacing: 2px;
-    font-size: .7em;
+    font-size: 0.85rem;
+    color: #eee;
   }
 
   .stats td:last-child {
     text-align: left;
+    color: #eee;
   }
   
   .stopwatch {

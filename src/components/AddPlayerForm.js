@@ -11,8 +11,12 @@ export class AddPlayerForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        if (this.state.value !== '') {
         this.props.addPlayer(this.state.value);
         this.setState({value: ''})
+        } else {
+            alert('Please enter name of the player')
+        }
     }
 
     render() {
@@ -22,7 +26,7 @@ export class AddPlayerForm extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleValueChange}
-                    placeholder="Enter a player's name"
+                    placeholder="Enter player's name"
                 />
 
                 <input 
