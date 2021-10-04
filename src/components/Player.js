@@ -1,5 +1,5 @@
 import React from 'react';
-import {Counter} from './Counter.js'
+import {Counter} from './Counter.js';
 
 export const Player = (props) => {
     return (
@@ -11,6 +11,7 @@ export const Player = (props) => {
   
         <Counter 
             score={props.score} 
+            index={props.index}
             changeScore={props.changeScore}
         />
       </div>
