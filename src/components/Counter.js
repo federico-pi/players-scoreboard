@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const Counter = (props) => {
-
     let index = props.index
   
     return (

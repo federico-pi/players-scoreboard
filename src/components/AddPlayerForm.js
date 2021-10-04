@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
-class AddPlayerForm extends Component {
-
+export class AddPlayerForm extends Component {
     state = {
         value: ''
     }
@@ -34,5 +33,3 @@ class AddPlayerForm extends Component {
         )
     }
 }
-
-export default AddPlayerForm;
