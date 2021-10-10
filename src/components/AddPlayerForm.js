@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export class AddPlayerForm extends Component {
     state = {
@@ -10,9 +11,10 @@ export class AddPlayerForm extends Component {
     }
 
     handleSubmit = (e) => {
+        const {addPlayer} = this.props;
         e.preventDefault();
         if (this.state.value !== '') {
-        this.props.addPlayer(this.state.value);
+        addPlayer(this.state.value);
         this.setState({value: ''})
         } else {
             alert('Please enter name of the player')
@@ -36,4 +38,8 @@ export class AddPlayerForm extends Component {
             </form>
         )
     }
+}
+
+AddPlayerForm.propTypes = {
+    addPlayer: PropTypes.func
 }
