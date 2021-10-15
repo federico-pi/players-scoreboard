@@ -12,8 +12,6 @@ export class Player extends PureComponent {
       score,
       index,
       removePlayer,
-      scoreIncrement,
-      scoreDecrement,
       isHighScore
     } = this.props;
 
@@ -28,8 +26,6 @@ export class Player extends PureComponent {
         <Counter 
             score={score} 
             index={index}
-            scoreIncrement={scoreIncrement}
-            scoreDecrement={scoreDecrement}
         />
       </div>
     );
@@ -42,8 +38,6 @@ Player.propTypes = {
   score: PropTypes.number,
   index: PropTypes.number,
   removePlayer: PropTypes.func,
-  scoreIncrement: PropTypes.func,
-  scoreDecrement: PropTypes.func,
   handleHighScore: PropTypes.bool,
   isHighScore: PropTypes.bool
 }
